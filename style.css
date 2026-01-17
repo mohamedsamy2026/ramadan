@@ -58,7 +58,7 @@ a{
 
 
 #header-home{
-  background: url("img/bg.png");
+  background: url("img/bg.jpg");
   height: 100vh;
   width: 100%;
   background-position: center;
@@ -227,7 +227,7 @@ a{
 /* مؤقت التنازلي بتاع رمضان يبدأ */
 #time-in { 
     padding: 9rem 0; 
-    background:url("img/time-in-ramdan.jpeg")no-repeat center center/cover;
+    background:url("img/time-in-ramdan.jpg")no-repeat center center/cover;
     overflow: hidden;
     position: relative;
     background-attachment: fixed;
@@ -318,7 +318,7 @@ background-color: rgba(0, 0, 0, 0.4);
 /* مواقيت الصلاه يبدأ */
 #time-salah {
     padding: 8rem 2rem;
-    background: url("img/time-set-in.png") no-repeat center center/cover;
+    background: url("img/time-set-in.jpg") no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
