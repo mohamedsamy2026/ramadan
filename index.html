@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- Library fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- icons -->
     <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon" />
@@ -35,7 +32,8 @@
               <li><a href="#time-in">الوقت المتبقي علي رمضان</a></li>
               <li><a href="#time-salah">مواقيت الصلاه</a></li>
               <li><a href="#azkar">الاذكار</a></li>
-              <li><a href="#">اتصل بنا</a></li>
+              <li><a href="#">أغاني رمضان</a></li>
+              <li><a href="#">صور رمضان</a></li>
             </ul>
           </nav>
         </header>
@@ -92,7 +90,7 @@
       <!-- مواقيت الصلاه يبدأ  -->
       <section id="time-salah">
     <div class="container">
-        <h2 class="titlee">مواقيت الصلاة في رمضان - اليوم - القاهرة</h2>
+        <h2 class="titlee">مواقيت الصلاة - القاهرة</h2>
         <div class="prayer-cards-container">
             <div class="prayer-card">
                 <div class="icon-box">
@@ -128,46 +126,68 @@
     <!-- مواقيت الصلاه ينتهي -->
 
     <!-- الاذكار يبدأ -->
-     <section id="adhkar" class="adhkar-section">
+  <section id="azkar" class="azkar-section">
     <div class="container">
-        <h2 class="section-title">أذكار المسلم</h2>
-        <div class="adhkar-grid">
-            <div class="dhikr-card">
+        <h2 class="section-title">الأذكار والسبحة الإلكترونية</h2>
+        
+        <div class="azkar-grid">
+            <div class="azkar-card">
                 <i class="fas fa-sun"></i>
                 <h3>أذكار الصباح</h3>
-                <p>نور لقلبك وبداية ليومك</p>
-                <a href="#" class="btn-dhikr">قراءة الآن</a>
+                <button class="btn-start" onclick="openAzkar('morning')">ابدأ الآن</button>
             </div>
 
-            <div class="dhikr-card">
+            <div class="azkar-card">
                 <i class="fas fa-moon"></i>
                 <h3>أذكار المساء</h3>
-                <p>طمأنينة لروحك قبل النوم</p>
-                <a href="#" class="btn-dhikr">قراءة الآن</a>
+                <button class="btn-start" onclick="openAzkar('evening')">ابدأ الآن</button>
             </div>
 
-            <div class="dhikr-card">
-                <i class="fas fa-beads"></i>
-                <h3>تسبيح</h3>
-                <p>أذكار متنوعة واستغفار</p>
-                <a href="#" class="btn-dhikr">ابدأ التسبيح</a>
+            <div class="azkar-card">
+              <i class="fas fa-pray"></i>
+                <h3>السبحة الإلكترونية</h3>
+                <button class="btn-start" onclick="openSebhaModal()">ابدأ الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="azkar-modal" class="azkar-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAzkarModal()">&times;</span>
+            <h2 id="modal-title">أذكار</h2>
+            <div class="zekr-container">
+                <div id="zekr-text" class="zekr-main-text">جاري التحميل...</div>
+                <div class="zekr-counter-box" id="zekr-counter-click">
+                    <span id="zekr-count-display">0</span>
+                    <p>المتبقي</p>
+                </div>
+            </div>
+            <div class="modal-controls">
+                <button id="prev-btn" class="nav-btn">السابق</button>
+                <button id="next-btn" class="nav-btn">التالي</button>
+            </div>
+            <div id="zekr-index" class="zekr-index">1 / 1</div>
+        </div>
+    </div>
+
+    <div id="sebha-modal" class="azkar-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSebhaModal()">&times;</span>
+            <h2>السبحة الإلكترونية</h2>
+            
+            <div class="sebha-container">
+                <div class="sebha-display-large">
+                    <span id="sebha-count-modal">0</span>
+                    <p>إجمالي التسبيح</p>
+                </div>
+                <button class="main-sebha-btn" id="sebha-click-btn">اضغط للتسبيح</button>
+                <button class="btn-reset-modal" id="reset-sebha-btn">
+                    <i class="fas fa-sync-alt"></i> تصفير العداد
+                </button>
             </div>
         </div>
     </div>
 </section>
-
-<div id="dhikr-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <h2 id="modal-title">اسم الذكر</h2>
-        <div id="modal-body" class="modal-text">
-            </div>
-        <div class="counter-container">
-            <button id="count-btn" class="count-btn">0</button>
-            <p style="margin-top: 10px; color: #666;">اضغط على الدائرة للتسبيح</p>
-        </div>
-    </div>
-</div>
     <!-- الاذكار ينتهي -->
     </main>
     <!-- main end -->
