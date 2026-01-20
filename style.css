@@ -78,7 +78,7 @@ a{
   padding: 0 6rem;
   font-weight: 700;
   color: white;
-  z-index: 1000; 
+  z-index: 100000; 
   backdrop-filter: blur(5px);
 }
 
@@ -498,7 +498,7 @@ background-color: rgba(0, 0, 0, 0.4);
 .azkar-modal { 
     display: none; 
     position: fixed; 
-    z-index: 9999; 
+    z-index: 999999; 
     left: 0; 
     top: 0; 
     width: 100%; 
@@ -673,21 +673,210 @@ background-color: rgba(0, 0, 0, 0.4);
 .btn-reset-modal:hover{
   background-color: red;
 }
+
+
+
+.reset-azkar-btn {
+    background: #023b5d; 
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    font-size: 2rem;
+}
+
+.reset-azkar-btn:hover {
+    background: #ff4757; 
+    transform: rotate(45deg); 
+}
 /* الاذكار ينتهي */
 
 
 
 
+/* اغاني رمضان تبدأ  */
+/* شبكة كروت الأغاني */
+.all{
+  padding: 6rem 0;
+  background: url("img/sss.png") center center/cover no-repeat;
+  position: relative;
+  z-index: 5000;
+}
+
+.all::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+    width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: -1;
+}
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.close-btn {
+    background-color: red;
+    width: 40px;        
+    height: 40px;        
+    border-radius: 50%;   
+    color: white;
+    cursor: pointer;
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    border: none;         
+    transition: 0.3s;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* حركة شياكة لما تلمس الزرار */
+.close-btn:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+.song-card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.song-card i {
+    font-size: 2.5rem;
+    color: #0570d4;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.song-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* تنسيق فيديو اليوتيوب ليكون متجاوب */
+.video-wrapper {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px !important;
+}
+
+#youtube-player {
+    position: relative;
+    padding-bottom: 56.25%; /* نسبة 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+}
+
+#youtube-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* اغاني رمضان تنتهي */
 
 
 
+/* صور رمضان تبدأ */
+/* تنسيق القسم بالكامل */
+.gallery-section {
+    padding: 6rem 0;
+    text-align: center;
+    background: url("img/sl3.jpg") center center/cover no-repeat;
+}
 
+/* الجريد - بيخلي الصور جنب بعض ومنظمة */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* الكارت اللي شايل الصورة والزرار */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* حاوية الصورة عشان نتحكم في الحركة */
+.img-container {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.section-title{
+  color: white;
+  font-size: 65px;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* سرعة الحركة */
+}
+
+/* اللمسة الحلوة: زووم بسيط لما تقف على الصورة */
+.img-container:hover img {
+    transform: scale(1.1) rotate(2deg); /* تكبير مع لفة خفيفة جداً */
+}
+
+/* زرار التحميل */
+.download-btn {
+    background-color: #d35400;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #c45e05;
+}
+/* صور رمضان تنتهي */
 
 
 
 
 /*media Special Start*/
-@media (max-width: 900px) {
+@media (max-width: 1300px) {
   .header {
     padding: 0 3rem;
     position: relative;

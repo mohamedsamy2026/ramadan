@@ -354,4 +354,113 @@ window.onclick = function(e) {
         closeSebhaModal();
     }
 };
+
+function resetAzkarProgress() {
+    // 1. نرجع المؤشر للصفر (أول ذكر)
+    currentIndex = 0;
+
+    // 2. نعيد تصفير العدادات (المتبقي) لكل الأذكار في القائمة الحالية
+    currentList = azkarData[currentType].map(zekr => ({
+        ...zekr,
+        remaining: zekr.repeat
+    }));
+
+    // 3. نحدث الشاشة لعرض أول ذكر
+    showZekr();
+    
+    // 4. نخزن الحالة الجديدة في المتصفح
+    localStorage.setItem(`lastIndex_${currentType}`, 0);
+}
 // الاذكار ينتهي
+
+
+// اغاني رمضان تبدأ 
+// قائمة الأغاني بـ ID اليوتيوب
+// قائمة أغاني رمضان بالـ IDs الجديدة اللي بعتها
+const ramadanSongs = [
+
+    { 
+        title: "رمضان كريم", 
+        artist: "حكيم", 
+        id: "xtRoFhRzFAs" 
+    },
+    { 
+        title: "قد جائنا رمضان", 
+        artist: "أحمد حسن ", 
+        id: "YTKryn8MeoM" 
+    },
+        { 
+    title: "اهلا رمضان", 
+    artist: "الحسن عادل", 
+    id: "nBxFl1dziqs" 
+},
+    { 
+        title: "وحوي يا وحوي", 
+        artist: "أحمد حسن ",
+        id: "V9_f0yiYMpw" 
+    },
+    { 
+        title: "مرحب شهر الصوم", 
+        artist: "مرحب رمضان", 
+        id: "vs7hrEDqSaY" 
+    },
+    { 
+    title: "يا حلاوة رمضان", 
+    artist: "الحسن عادل", 
+    id: "yZmcOlJlnag" 
+},
+
+
+
+
+];
+
+// تأكد إن دالة loadRamadanSongs موجودة تحتها عشان تعرضهم أول ما الصفحة تفتح
+function loadRamadanSongs() {
+    const songsList = document.getElementById('songs-list');
+    if(!songsList) return; // حماية لو القسم مش موجود
+    
+    songsList.innerHTML = ""; 
+
+    ramadanSongs.forEach((song, index) => {
+        const card = document.createElement('div');
+        card.className = 'song-card';
+        card.onclick = () => openMusicPlayer(index);
+        card.innerHTML = `
+            <i class="fas fa-music"></i>
+            <h4>${song.title}</h4>
+            <p style="font-size: 0.9rem;     font-weight: 800; color: #666;">${song.artist}</p>
+        `;
+        songsList.appendChild(card);
+    });
+}
+
+// استدعاء الدالة
+document.addEventListener('DOMContentLoaded', loadRamadanSongs);
+
+// دالة فتح المشغل
+function openMusicPlayer(index) {
+    const song = ramadanSongs[index];
+    const playerContainer = document.getElementById('youtube-player');
+    
+    // وضع الـ Iframe
+    playerContainer.innerHTML = `
+        <iframe src="https://www.youtube.com/embed/${song.id}?autoplay=1" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+        </iframe>`;
+    
+    document.getElementById('song-title-display').innerText = song.title;
+    document.getElementById('music-modal').style.display = 'flex';
+}
+
+// دالة قفل المشغل (مهمة جداً لمسح الفيديو)
+function closeMusicModal() {
+    document.getElementById('youtube-player').innerHTML = ""; // يمسح الفيديو عشان الصوت يقف
+    document.getElementById('music-modal').style.display = 'none';
+}
+
+// تشغيل الدالة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', loadRamadanSongs);
+// اغاني رمضان تنتهي

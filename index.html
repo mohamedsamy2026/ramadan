@@ -32,8 +32,8 @@
               <li><a href="#time-in">الوقت المتبقي علي رمضان</a></li>
               <li><a href="#time-salah">مواقيت الصلاه</a></li>
               <li><a href="#azkar">الاذكار</a></li>
-              <li><a href="#">أغاني رمضان</a></li>
-              <li><a href="#">صور رمضان</a></li>
+              <li><a href="#اغاني">أغاني رمضان</a></li>
+              <li><a href="#صور رمضان">صور رمضان</a></li>
             </ul>
           </nav>
         </header>
@@ -54,7 +54,7 @@
                 والبركات والأمن والأمان في كل زمان ومكان.
               </p>
               <h2>رمضان مبارك</h2>
-              <a href="" class="btn">استكشف المزيد</a>
+              <a href="#azkar" class="btn">استكشف المزيد</a>
             </div>
             <img src="img/mohamed-home.jpg" alt="" />
           </div>
@@ -162,10 +162,14 @@
                     <p>المتبقي</p>
                 </div>
             </div>
-            <div class="modal-controls">
-                <button id="prev-btn" class="nav-btn">السابق</button>
-                <button id="next-btn" class="nav-btn">التالي</button>
-            </div>
+           <div class="modal-controls">
+            <button id="prev-btn" class="nav-btn">السابق</button>
+            <button onclick="resetAzkarProgress()" class="reset-azkar-btn" title="إعادة للأول">
+            <i class="fas fa-redo"></i>
+          </button>
+    
+    <button id="next-btn" class="nav-btn">التالي</button>
+</div>
             <div id="zekr-index" class="zekr-index">1 / 1</div>
         </div>
     </div>
@@ -189,6 +193,94 @@
     </div>
 </section>
     <!-- الاذكار ينتهي -->
+     
+    <!-- اغاني رمضان تبدأ -->
+    <div id="اغاني" class="all">
+
+     
+      <section id="ramadan-songs" class="container" style="margin-top: 40px;">
+        <h2 style="text-align: center; color: #ffffff; font-size: 60px; margin-bottom: 35px;">اغاني رمضان</h2>
+        <div id="songs-list" class="songs-grid">
+
+        </div>
+      </section>
+
+<div id="music-modal" class="azkar-modal" style="display: none; align-items: center; justify-content: center;">
+    <div class="modal-content video-wrapper">
+        <span class="close-btn" onclick="closeMusicModal()">&times;</span>
+        <div id="youtube-player"></div>
+        <h3 id="song-title-display" style="margin-top:15px; text-align:center; color:#023b5d;"></h3>
+    </div>
+</div>
+    </div>
+
+    <!-- اغاني رمضان تنتهي -->
+
+    <!-- صور رمضان تبدأ -->
+     <section id="صور رمضان" class="gallery-section">
+    <h2 class="section-title">🌙 صور رمضان</h2>
+    <div class="image-grid">
+        
+        <div class="card">
+            <div class="img-container">
+                <img src="img/mr1.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/mr1.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/mohamed-home.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/mohamed-home.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/mr2.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/mr2.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/hg.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/hg.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/b24.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/b24.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/wallpaperflare.com_wallpaper.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/wallpaperflare.com_wallpaper.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/wallpaper.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/wallpaper.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/pip.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/pip.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        <div class="card">
+            <div class="img-container">
+                <img src="img/qruan.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/qruan.jpg" download class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+    </div>
+</section>
+    <!-- صور رمضان تنتهي -->
     </main>
     <!-- main end -->
     <script src="main.js"></script>
