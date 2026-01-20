@@ -518,6 +518,7 @@ background-color: rgba(0, 0, 0, 0.4);
 /* =========================================
    2. النوافذ المنبثقة (Modal) - عام
    ========================================= */
+/* الحاوية السوداء الكبيرة */
 .azkar-modal { 
     display: none; 
     position: fixed; 
@@ -527,36 +528,86 @@ background-color: rgba(0, 0, 0, 0.4);
     width: 100%; 
     height: 100%; 
     background: rgba(0,0,0,0.85); 
+    display: none; /* هيتغير بالـ JS لـ flex */
     align-items: center; 
     justify-content: center; 
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
 }
 
+/* المربع الأبيض */
 .modal-content { 
     background: #fff; 
     width: 90%; 
-    max-width: 550px; 
-    padding: 40px; 
+    max-width: 500px; 
+    padding: 60px 20px 30px; /* مسافة فوق لزرار القفل */
     border-radius: 30px; 
     position: relative;
-    margin: 0 1rem;
-    text-align: center; 
+    text-align: center;
+    /* السر هنا عشان السكرول يشتغل جوه */
+    max-height: 85vh; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
 }
-
+/* زرار القفل */
 .close-modal { 
     position: absolute; 
-    top: 20px; 
-    left: 25px; 
-    font-size: 30px; 
+    top: 15px; 
+    left: 15px; 
+    font-size: 25px; 
     cursor: pointer; 
-    color: #ffffff; 
-    background-color: rgb(255, 0, 0);
+    color: #fff; 
+    background-color: #ff0000;
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+/* 1. المربع الأبيض */
+.modal-content {
+    background: #fff;
+    padding-left: 0 !important; /* شيلنا المسافة من الشمال عشان السكرول ينام هناك */
+    padding-right: 20px; /* رجعنا المسافة لليمين عادي */
+    overflow-y: auto;
+    position: relative;
+    display: block;
+    direction: rtl; /* عشان يفضل النص عربي مظبوط والسكرول يروح شمال */
 }
 
+/* 2. حاوية النص */
+.zekr-main-text {
+    padding-left: 20px; /* مسافة أمان عشان الكلام م يلزقش في السكرول اللي بقى عالشمال */
+    padding-right: 10px;
+    text-align: center;
+}
 
+/* 3. عرض السكرول بار */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* 4. المجرى (الخلفية) على الشمال */
+.modal-content::-webkit-scrollbar-track {
+    background: #f9f9f9;
+    /* بنخلي الانحناء من ناحية الشمال (فوق وتحت) عشان يطقم مع المودال */
+    border-radius: 100px 0 0 100px; 
+}
+
+/* 5. المقبض (الجزء اللي بيتحرك) */
+.modal-content::-webkit-scrollbar-thumb {
+    background: #03aeb4; 
+    border-radius: 10px;
+}
+
+/* زرار القفل - تأكد إنه مش مغطي على السكرول */
+.close-modal {
+    left: auto; /* لغينا مكانه القديم */
+    right: 15px; /* نقلناه يمين عشان السكرول بقى شمال */
+    top: 15px;
+}
 
 /* =========================================
    3. تفاصيل مودال الأذكار (Zekr)
@@ -566,15 +617,16 @@ background-color: rgba(0, 0, 0, 0.4);
   color: black;
   font-size: 25px;
   font-weight: 800;
-}   
+}  /* نص الذكر */
 .zekr-main-text { 
-    font-size: 1.8rem; 
-    line-height: 1.7; 
-    min-height: 120px; 
-    margin: 30px 0; 
-    margin-top: 10px;
+    font-size: 1.5rem; 
+    line-height: 1.8; 
+    margin: 15px 0; 
     font-weight: 600; 
     color: #333;
+    /* إجبار النص إنه ميهربش بالعرض */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .zekr-counter-box { 
@@ -608,12 +660,13 @@ background-color: rgba(0, 0, 0, 0.4);
     color: #fff; 
     border: none; 
     max-width: 200px;
-    margin: auto;
+    margin:auto;
     padding: 13px 10px; 
     border-radius: 12px; 
     cursor: pointer; 
     font-weight: 700;
     font-size: 18px; 
+    margin-left: 10px;
 }
 
 /* حالة الأزرار المعطلة (أول أو آخر ذكر) */
@@ -1235,6 +1288,9 @@ background-color: rgba(0, 0, 0, 0.4);
 
 
 /* media End */
+
+
+
 
 
 
