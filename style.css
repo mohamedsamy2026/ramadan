@@ -1175,6 +1175,11 @@ background-color: rgba(0, 0, 0, 0.4);
 
 
 }
+
+#header-home #home .home-all .home-text h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
 #header-home #home .home-all .home-text p{
     margin: auto;
 }
