@@ -464,3 +464,5 @@ function closeMusicModal() {
 // تشغيل الدالة عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', loadRamadanSongs);
 // اغاني رمضان تنتهي
+
+
