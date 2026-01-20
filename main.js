@@ -271,6 +271,12 @@ function openAzkar(type) {
 }
 
 function showZekr() {
+    // بدل block هنخليها flex عشان ترجع تتوسطن في النص بالظبط
+    const countDisplay = document.getElementById('zekr-count-display');
+    countDisplay.parentElement.style.display = "flex"; 
+    countDisplay.parentElement.style.justifyContent = "center"; // نضمن إنها في النص
+    countDisplay.parentElement.style.alignItems = "center";
+    
     const zekr = currentList[currentIndex];
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -312,11 +318,35 @@ document.getElementById('zekr-counter-click').onclick = function() {
     const zekr = currentList[currentIndex];
     
     if (zekr.remaining > 0) {
-        zekr.remaining--; // بننقص من المتبقي المحفوظ في القائمة
+        zekr.remaining--; // بننقص من المتبقي
         document.getElementById('zekr-count-display').innerText = zekr.remaining;
         
+        // اهتزاز بسيط مع كل ضغطة
         if (navigator.vibrate) navigator.vibrate(40);
-        
+
+        // --- التعديل الجديد هنا ---
+        // لو العداد وصل لصفر والذكر مش الأخير في القائمة
+        if (zekr.remaining === 0) {
+            if (currentIndex < currentList.length - 1) {
+                // بنعمل تأخير بسيط (نص ثانية) عشان المستخدم يشوف رقم 0 قبل ما يقلب
+                setTimeout(() => {
+                    currentIndex++; 
+                    showZekr();
+                    // اهتزاز أطول شوية عشان يعرف إنه نقل للذكر اللي بعده
+                    if (navigator.vibrate) navigator.vibrate([50, 30, 50]); 
+                }, 500);
+           } else {
+    const display = document.getElementById('zekr-count-display');
+    
+    // 1. نخفي العنصر اللي شايل كلمة "المتبقي" والرقم
+    // كلمة parentElement بتجيب العنصر اللي شايل العداد كله وتخفيه
+    display.parentElement.style.display = "none"; 
+
+    // 2. نغير نص الذكر ونظبط شكله
+    const zekrText = document.getElementById('zekr-text');
+    zekrText.innerHTML = "<div style='color:green; font-size:3rem;'>✔</div>تم بحمد الله ختم هذه الأذكار";
+}
+        }
     }
 };
 
@@ -462,7 +492,5 @@ function closeMusicModal() {
 }
 
 // تشغيل الدالة عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', loadRamadanSongs);
 // اغاني رمضان تنتهي
-
 

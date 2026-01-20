@@ -805,49 +805,61 @@ background-color: rgba(0, 0, 0, 0.4);
 /* اغاني رمضان تنتهي */
 
 
+/* =========================================
+   قسم صور رمضان - النسخة المعدلة للموبايل
+   ========================================= */
 
-/* صور رمضان تبدأ */
 .gallery-section {
     padding: 6rem 0;
     text-align: center;
-    background-color: #3b82f6;
+    background-color: #3b82f6; /* لونك المفضل */
     position: relative;
-    z-index: 10; /* رفعنا السيكشن كله */
+    z-index: 10; /* رفعنا السيكشن كله عشان م يختفيش ورا الفوتر */
+}
+
+.section-title {
+    color: white !important;
+    font-size: clamp(35px, 8vw, 65px); /* حجم مرن عشان الموبايل */
+    margin-bottom: 40px;
+    font-weight: bold;
 }
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 11;
 }
 
 .card {
     background: white;
     padding: 15px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
     gap: 15px;
+    transition: transform 0.3s ease;
     position: relative;
-    z-index: 11;
+    z-index: 12;
+    /* ده بيضمن إن الموبايل يحس باللمسة جوه الكارت */
+    pointer-events: auto !important; 
 }
+
+
 
 .img-container {
     width: 100%;
-    height: 250px; /* حددنا طول ثابت عشان نسيب مكان للزرار */
+    height: 400px; /* طول ثابت عشان الزرار م يهربش */
+    height: 100%;
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.section-title {
-    color: white !important;
-    font-size: clamp(35px, 10vw, 65px); /* حجم مرن للموبايل */
-    margin-bottom: 30px;
+    position: relative;
 }
 
 .img-container img {
@@ -862,24 +874,37 @@ background-color: rgba(0, 0, 0, 0.4);
 }
 
 .download-btn {
-    background-color: #d35400;
+    background-color: #d35400; /* لونك البرتقالي */
     color: white !important;
     text-decoration: none;
-    padding: 15px;
+    padding: 14px;
     border-radius: 8px;
     font-weight: bold;
-    transition: background 0.3s;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     display: block;
+    border: none;
+    /* أهم جزء للموبايل */
     position: relative;
-    z-index: 20; /* الزرار أعلى من الصورة ومن الكارت */
+    z-index: 99; /* أعلى طبقة عشان صباعك يلمسها فوراً */
     cursor: pointer;
+    touch-action: manipulation; /* بيحسن استجابة اللمس */
 }
 
 .download-btn:hover {
-    background-color: #d86907;
+    background-color: #e67e22;
+    transform: scale(1.02);
 }
-/* صور رمضان تنتهي */
 
+/* تعديل الفوتر (ضروري جداً) */
+.modern-footer {
+    z-index: 1 !important; /* نزلنا الفوتر تحت الصور */
+    position: relative;
+}
+
+/* =========================================
+   نهاية قسم الصور
+   ========================================= */
 
 /* فوتر يبدأ */
 
@@ -1059,6 +1084,9 @@ background-color: rgba(0, 0, 0, 0.4);
   }
 
   .navbar {
+            /* لو القائمة مش مفتوحة، خليها مختفية تماماً ومتاخدش مساحة لمس */
+        visibility: hidden; 
+        pointer-events: none; 
     background-color: rgb(2, 114, 134);
     position: absolute;
     top: 115px;
@@ -1067,11 +1095,15 @@ background-color: rgba(0, 0, 0, 0.4);
     padding: 15px 3rem;
     opacity: 0;
     transition: 0.3s ease;
+    
   }
   
-  .navbar.active {
-    opacity: 1;
-  }
+    .navbar.active {
+    visibility: visible !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+}
+  
   
   .navbar ul {
     display: block;
@@ -1118,3 +1150,7 @@ background-color: rgba(0, 0, 0, 0.4);
 }
   
 }
+
+
+
+
