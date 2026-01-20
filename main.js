@@ -494,3 +494,25 @@ function closeMusicModal() {
 // تشغيل الدالة عند تحميل الصفحة
 // اغاني رمضان تنتهي
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // حدد هنا الـ IDs اللي عايز تعملها Lazy Loading بس
+    const targetIds = ["#azkar", ".all", ".modern-footer"]; 
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // ضيف كلاس يظهر الخلفية
+                entry.target.classList.add("show-bg"); 
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: "0px 0px 200px 0px" });
+
+    // تشغيل المراقبة على العناصر المحددة فقط
+    targetIds.forEach(id => {
+        const element = document.querySelector(id);
+        if (element) observer.observe(element);
+    });
+});

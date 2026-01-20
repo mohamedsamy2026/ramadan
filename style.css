@@ -58,11 +58,27 @@ a{
 
 
 #header-home{
-  background: url("img/bg.jpg");
-  height: 100vh;
+background: url("img/bg.jpg");
+    /* غير دي من 100vh لـ auto عشان الخلفية تنزل مع المحتوى مهما زاد */
+    min-height: 100vh; 
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* حركة صايعة تخلي الخلفية ثابتة والكلام بيتحرك فوقيها */
+    display: flex;
+    flex-direction: column;
+    z-index: 155;
+}
+
+#header-home::before{
+      content: '';
   width: 100%;
-  background-position: center;
-  background-size: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+background-color: rgba(0, 0, 0, 0.2); 
 }
 /* header Start */
 .header {
@@ -130,14 +146,12 @@ a{
 
 /* home Start */
 #home {
-  padding-top: 120px; 
-  
-  min-height: 100vh; 
-
-  
-  display: flex;
-  align-items: center; 
-  direction: rtl;
+padding-top: 140px; /* زودنا المسافة شوية عشان الهيدر */
+    padding-bottom: 100px; /* عشان الصورة متخبطش في السيكشن اللي تحته */
+    flex: 1; /* يخلي القسم ياخد باقي مساحة الشاشة */
+    display: flex;
+    align-items: center;
+    direction: rtl;
 }
 
 #header-home #home .home-all{
@@ -418,6 +432,11 @@ background-color: rgba(0, 0, 0, 0.4);
     background: #f9f9f9; 
     direction: rtl; 
     background: url("img/qruan.jpg") center center/cover no-repeat;
+}
+
+.azkar-section.show-bg{
+    background: url("img/qruan.jpg") center center/cover no-repeat;
+
 }
 
 .zekr-main-text img {
@@ -708,9 +727,12 @@ background-color: rgba(0, 0, 0, 0.4);
 /* شبكة كروت الأغاني */
 .all{
   padding: 6rem 0;
-  background: url("img/sss.png") center center/cover no-repeat;
   position: relative;
   z-index: 5000;
+}
+
+.all.show-bg{
+    background: url("img/sss.png") center center/cover no-repeat;
 }
 
 .all::before{
@@ -816,6 +838,7 @@ background-color: rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 10; /* رفعنا السيكشن كله عشان م يختفيش ورا الفوتر */
 }
+
 
 .section-title {
     color: white !important;
@@ -923,9 +946,12 @@ background-color: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     direction: rtl;
     border-top: 2px solid #f1c40f;
-    background: url("img/Gemini_Generated_Image_v3td9ev3td9ev3td.png") center center/cover no-repeat;
     position: relative;
     z-index: 999;
+}
+
+.modern-footer.show-bg{
+    background: url("img/Gemini_Generated_Image_v3td9ev3td9ev3td.png") center center/cover no-repeat;
 }
 
 
@@ -1044,6 +1070,7 @@ background-color: rgba(0, 0, 0, 0.4);
 
 
 
+/* media Start */
 
 
 /*media Special Start*/
@@ -1133,23 +1160,77 @@ background-color: rgba(0, 0, 0, 0.4);
 /*media Special End*/
 
 
+
+@media (max-width:1260px){
+#header-home #home .home-all{
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+#header-home #home .home-all .home-text{
+    text-align: center;
+    margin-bottom: 2rem;
+    order: 2;
+    margin-top: 1.5rem;
+
+
+}
+#header-home #home .home-all .home-text p{
+    margin: auto;
+}
+
+#header-home #home .home-all .home-text .btn{
+    margin:20px auto;
+    
+}
+  #header-home #home .home-all img{
+    order: 1;
+  }
+  #header-home #home .home-all .home-text h2{
+    margin: 20px 0 25px;
+  }
+
+}
+
+
+
 @media (max-width:780px) {
-/* لما القائمة تكون مقفولة (الوضع الطبيعي) */
+
 .header {
     backdrop-filter: blur(0);
     -webkit-backdrop-filter: blur(0);
-    transition: all 0.2s ease; /* عشان الـ Blur يدخل بنعومة */
+    transition: all 0.2s ease; 
 }
 
-/* التريك هنا: لو الهيدر جواه navbar واخد active */
-/* أو لو إنت بتضيف active للهيدر نفسه بالـ JS وده الأفضل */
+
 .header:has(.navbar.active) {
     backdrop-filter: blur(15px) !important;
     -webkit-backdrop-filter: blur(15px) !important;
-    background-color: rgba(0, 0, 0, 0.3); /* لون خفيف عشان الـ blur يبان أكتر */
+    background-color: rgba(0, 0, 0, 0.3); 
 }
-  
+  #header-home #home .home-all img{
+    max-width: 90%;
+    margin: 0 0.5rem;
 }
+}
+
+
+@media (max-width:400px) {
+.brand-side p{
+    width: 320px;
+    margin: auto;
+}
+
+.songs-grid{
+    margin: 0.5rem;
+}
+
+
+}
+
+
+/* media End */
+
 
 
 
