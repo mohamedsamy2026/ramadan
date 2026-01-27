@@ -27,7 +27,7 @@ document.querySelectorAll(".navbar ul li a").forEach(link => {
 
 
 // التعديل الجديد لتاريخ رمضان 2026 الصح
-const ramadanDate = new Date("February 18, 2026 0:00:00").getTime();
+const ramadanDate = new Date("February 19, 2026 0:00:00").getTime();
 
 const updateCountdown = setInterval(function() {
     const now = new Date().getTime();
