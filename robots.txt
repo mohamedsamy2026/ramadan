@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohamedsamy2026.github.io/ramadan/sitemap.xml

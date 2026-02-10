@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta name="description" content="موقع رمضان 2026: إمساكية، مواقيت الصلاة، أذكار، وسبحة إلكترونية. تطوير وبرمجة محمد سامي محمود.">
+
+<meta name="keywords" content="رمضان 2026, مواقيت الصلاة, أذكار الصباح والمساء, سبحة الكترونية, محمد سامي, Mohamed Samy, Ramadan 2026">
+
+<meta name="author" content="Mohamed Samy">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="موقع رمضان 2026 | محمد سامي">
+<meta property="og:description" content="كل ما يحتاجه المسلم في رمضان في مكان واحد.">
+
+<meta property="og:image" content="img/logo.png"> <meta property="og:url" content="https://mohamedsamy2026.github.io/ramadan/">
+<meta property="og:type" content="website">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>رمضان كريم | محمد سامي محمود</title>
+    <!-- link CSS  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Library fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- main start -->
+    <main id="header-home">
+      <!-- header satrt -->
+      <section>
+        <header class="header">
+          <div class="logo">
+            <a href="#home"><img src="img/Ramadan-removebg.png" loading="eager" alt="logo"/></a>
+          </div>
+          <div class="humburger">
+            <i class="fa-solid fa-bars active"></i>
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <nav class="navbar">
+            <ul>
+              <li><a href="#home">الصفحه الرئيسيه</a></li>
+              <li><a href="#time-in">الوقت المتبقي علي رمضان</a></li>
+              <li><a href="#time-salah">مواقيت الصلاه</a></li>
+              <li><a href="#azkar">الاذكار</a></li>
+              <li><a href="#اغاني">أغاني رمضان</a></li>
+              <li><a href="#gallery">صور رمضان</a></li>
+            </ul>
+          </nav>
+        </header>
+      </section>
+      <!-- header end -->
+      <!-- home Start -->
+      <section id="home">
+        <div class="container">
+          <div class="home-all">
+            <div class="home-text">
+              <h1>رمضان كريم</h1>
+              <p>
+                رمضان هو شهر الخير والرحمة والغفران، فيه تتنزل البركات وتصفو
+                القلوب وتجتمع العائلات على مائد المحبة والإيمان، وهو فرصة ذهبية
+                لكل مسلم لتجديد العهد مع الله بالصيام والقيام وصالح الأعمال.
+                نسأل الله العلي القدير أن يبارك لنا في أيامه ولياليه، وأن يمن
+                علينا فيه بالقبول والرضوان، وأن يعيده على الأمة الإسلامية باليمن
+                والبركات والأمن والأمان في كل زمان ومكان.
+              </p>
+              <h2>رمضان مبارك</h2>
+              <a href="#azkar" class="btn">استكشف المزيد</a>
+            </div>
+            <img src="img/mohamed-home.jpg" loading="eager" alt="mohamed samy" />
+          </div>
+        </div>
+      </section>
+      <!-- home End -->
+      <!-- العد التنازلي يبدأ -->
+      <section  id="time-in">
+        <div class="container">
+          <h2>الوقت المتبقي على شهر رمضان</h2>
+          <div id="countdown">
+            <div class="time-box">
+              <span id="days">00</span>
+              <p>أيام</p>
+            </div>
+            <div class="time-box">
+              <span id="hours">00</span>
+              <p>ساعات</p>
+            </div>
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <p>دقائق</p>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <p>ثواني</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- العد التنازلي ينتهي -->
+
+      <!-- مواقيت الصلاه يبدأ  -->
+      <section id="time-salah">
+    <div class="container">
+        <h2 class="titlee">مواقيت الصلاة - القاهرة</h2>
+        <div class="prayer-cards-container">
+            <div class="prayer-card">
+                <div class="icon-box">
+                  <i class="fas fa-mosque"></i>
+                </div>
+                <h3>الفجر</h3>
+                <p id="fajr-time">--:--</p>
+            </div>
+            <div class="prayer-card">
+                <div class="icon-box"><i class="fas fa-sun"></i></div>
+                <h3>الظهر</h3>
+                <p id="dhuhr-time">--:--</p>
+            </div>
+            <div class="prayer-card">
+                <div class="icon-box"><i class="fas fa-cloud-sun"></i></div>
+                <h3>العصر</h3>
+                <p id="asr-time">--:--</p>
+            </div>
+            <div class="prayer-card highlight">
+                <div class="icon-box"><i class="fas fa-moon"></i></div>
+                <h3>المغرب</h3>
+                <p id="maghrib-time">--:--</p>
+                <small class="small1">وقت الإفطار</small>
+            </div>
+            <div class="prayer-card">
+                <div class="icon-box"><i class="fas fa-star-and-crescent"></i></div>
+                <h3>العشاء</h3>
+                <p id="isha-time">--:--</p>
+            </div>
+        </div>
+    </div>
+  </section>
+    <!-- مواقيت الصلاه ينتهي -->
+
+    <!-- الاذكار يبدأ -->
+  <section id="azkar" class="azkar-section">
+    <div class="container">
+        <h2 class="section-title">الأذكار والسبحة الإلكترونية</h2>
+        
+        <div class="azkar-grid">
+            <div class="azkar-card">
+                <i class="fas fa-sun"></i>
+                <h3>أذكار الصباح</h3>
+                <button class="btn-start" onclick="openAzkar('morning')">ابدأ الآن</button>
+            </div>
+
+            <div class="azkar-card">
+                <i class="fas fa-moon"></i>
+                <h3>أذكار المساء</h3>
+                <button class="btn-start" onclick="openAzkar('evening')">ابدأ الآن</button>
+            </div>
+
+            <div class="azkar-card">
+              <i class="fas fa-pray"></i>
+                <h3>السبحة الإلكترونية</h3>
+                <button class="btn-start" onclick="openSebhaModal()">ابدأ الآن</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="azkar-modal" class="azkar-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAzkarModal()">&times;</span>
+            <h2 id="modal-title">أذكار</h2>
+            <div class="zekr-container">
+                <div id="zekr-text" class="zekr-main-text">جاري التحميل...</div>
+                <div class="zekr-counter-box" id="zekr-counter-click">
+                    <span id="zekr-count-display">0</span>
+                    <p>المتبقي</p>
+                </div>
+            </div>
+           <div class="modal-controls">
+            <button id="prev-btn" class="nav-btn">السابق</button>
+            <button onclick="resetAzkarProgress()" class="reset-azkar-btn" title="إعادة للأول">
+            <i class="fas fa-redo"></i>
+          </button>
+    
+    <button id="next-btn" class="nav-btn">التالي</button>
+</div>
+            <div id="zekr-index" class="zekr-index">1 / 1</div>
+        </div>
+    </div>
+
+    <div id="sebha-modal" class="azkar-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSebhaModal()">&times;</span>
+            <h2>السبحة الإلكترونية</h2>
+            
+            <div class="sebha-container">
+                <div class="sebha-display-large">
+                    <span id="sebha-count-modal">0</span>
+                    <p>إجمالي التسبيح</p>
+                </div>
+                <button class="main-sebha-btn" id="sebha-click-btn">اضغط للتسبيح</button>
+                <button class="btn-reset-modal" id="reset-sebha-btn">
+                    <i class="fas fa-sync-alt"></i> تصفير العداد
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- الاذكار ينتهي -->
+     
+    <!-- اغاني رمضان تبدأ -->
+    <div id="اغاني" class="all">
+
+     
+      <section id="ramadan-songs" class="container" style="margin-top: 40px;">
+        <h2 style="text-align: center; color: #ffffff; font-size: 60px; margin-bottom: 35px;">اغاني رمضان</h2>
+        <div id="songs-list" class="songs-grid">
+
+        </div>
+      </section>
+
+<div id="music-modal" class="azkar-modal" style="display: none; align-items: center; justify-content: center;">
+    <div class="modal-content video-wrapper">
+        <span class="close-btn" onclick="closeMusicModal()">&times;</span>
+        <div id="youtube-player"></div>
+        <h3 id="song-title-display" style="margin-top:15px; text-align:center; color:#023b5d;"></h3>
+    </div>
+</div>
+    </div>
+
+    <!-- اغاني رمضان تنتهي -->
+
+    <!-- صور رمضان تبدأ -->
+   <section id="gallery" class="gallery-section">
+    <h2 class="section-title">🌙 صور رمضان</h2>
+    <div class="image-grid">
+        
+        <div class="card">
+            <div class="img-container">
+                <img src="img/mr2.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/mr2.jpg" download="mr2" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/mr1.jpg" style="object-fit: contain;" alt="صورة رمضان">
+            </div>
+            <a href="img/mr1.jpg" download="mr1" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/jh.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/jh.jpg" download="jh" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/Ramadan-removebg.png" alt="صورة رمضان">
+            </div>
+            <a href="img/Ramadan-removebg.png" download="Ramadan-removebg" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/hg.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/hg.jpg" download="hg" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/b24.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/b24.jpg" download="b24" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/wallpaperflare.com_wallpaper.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/wallpaperflare.com_wallpaper.jpg" download="wallpaperflare.com_wallpaper" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/wallpaper.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/wallpaper.jpg" download="wallpaper" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/pip.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/pip.jpg" download="pip" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/qruan.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/qruan.jpg" download="qruan" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        
+        <div class="card">
+            <div class="img-container">
+                <img src="img/sl2.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/sl2.jpg" download="sl2" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+        
+        <div class="card">
+            <div class="img-container">
+                <img src="img/slsl.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/slsl.jpg" download="slsl" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/sl5.jpg" alt="صورة رمضان">
+            </div>
+            <a href="img/sl5.jpg" download="sl5" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/fg.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/fg.jpg" download="fg" class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+        <div class="card">
+            <div class="img-container">
+                <img src="img/sl.jpg" loading="lazy" alt="صورة رمضان">
+            </div>
+            <a href="img/sl.jpg" download="sl"  class="download-btn">تحميل الصورة 📥</a>
+        </div>
+
+    </div>
+</section>
+    <!-- صور رمضان تنتهي -->
+
+
+
+        <!-- فوترر يبدأ -->
+      <footer class="modern-footer">
+    <div class="footer-overlay"></div>
+    <div class="footer-content">
+        <div class="footer-box profile-side">
+            <div class="profile-frame">
+                <img src="img/removebg.png" alt="Mohamed Sami">
+            </div>
+        </div>
+
+    
+        <div class="footer-box brand-side">
+            <h2 class="ramadan-glow">رمضان مبارك</h2>
+            <div class="stars-row">✨ ✨ ✨</div>
+            <h3>ليالي الخير</h3>
+            <p>نسأل الله أن يتقبل منا ومنكم جميعا صالح الاعمال وكل عام وأنتم بخير</p>
+        </div>
+        <div class="footer-box message-side">
+            <p>تم التطوير بواسطة محمد سامي &copy; 2026</p>
+        </div>
+    </div>
+</footer>
+    <!-- فوترر ينتهي -->
+    </main>
+    <!-- main end -->
+    <script src="main.js"></script>
+  </body>
+</html>
