@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // ده كود بتاع الناف بار
 const navbar = document.querySelector(".navbar");
 const bars = document.querySelector(".fa-bars");
@@ -516,7 +516,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const element = document.querySelector(id);
         if (element) observer.observe(element);
     });
-=======
 // ده كود بتاع الناف بار
 const navbar = document.querySelector(".navbar");
 const bars = document.querySelector(".fa-bars");
@@ -1034,5 +1033,4 @@ document.addEventListener("DOMContentLoaded", function() {
         const element = document.querySelector(id);
         if (element) observer.observe(element);
     });
->>>>>>> 86616c864271717317fbc6f947ad6b0bad99036f
 });
