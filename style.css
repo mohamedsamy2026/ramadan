@@ -24,7 +24,7 @@ ul{
 }
 
 a{
-  text-decoration: none;
+  text-decoration: none;      
 }
 .container{
   max-width: 1200px;
@@ -1169,6 +1169,7 @@ background-color: rgba(0, 0, 0, 0.4);
         pointer-events: none; 
     background-color: rgb(2, 114, 134);
     position: absolute;
+    transform:  translateX(-20px);
     top: 115px;
     left: 0;
     width: 100%;
@@ -1182,6 +1183,7 @@ background-color: rgba(0, 0, 0, 0.4);
     visibility: visible !important;
     pointer-events: auto !important;
     opacity: 1 !important;
+    transform: translateX(0);
 }
   
   

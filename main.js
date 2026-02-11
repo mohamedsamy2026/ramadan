@@ -1,25 +1,26 @@
-// ده كود بتاع الناف بار
 const navbar = document.querySelector(".navbar");
+const humburgerMenu = document.querySelector(".humburger");
 const bars = document.querySelector(".fa-bars");
 const xmark = document.querySelector(".fa-xmark");
-const humburgerMenu = document.querySelector(".humburger");
 
-humburgerMenu.addEventListener("click", () => {
-  bars.classList.toggle("active");
-  xmark.classList.toggle("active");
-  navbar.classList.toggle("active");
+humburgerMenu.addEventListener("click", (e) => {
+    // منع الحدث من الانتشار عشان ميقفلش المنيو في نفس لحظة فتحها
+    e.stopPropagation(); 
+    
+    navbar.classList.toggle("active");
+    bars.classList.toggle("active");
+    xmark.classList.toggle("active");
 });
 
-// دي عشنا القئمه تقفل تاني
-document.querySelectorAll(".navbar ul li a").forEach(link => {
+// قفل المنيو لما تضغط على أي لينك
+document.querySelectorAll(".navbar ul li a").forEach((link) => {
     link.addEventListener("click", () => {
         navbar.classList.remove("active");
-        bars.classList.add("active");     
-        xmark.classList.remove("active");  
+        bars.classList.add("active");
+        xmark.classList.remove("active");
     });
 });
 
-// ده كود بتاع الناف بار انتهي
 
 
 // بتاع سشكن العد التنازلي
