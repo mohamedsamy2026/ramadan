@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 
+=======
+User-agent: *
+Allow: /
+
+>>>>>>> 86616c864271717317fbc6f947ad6b0bad99036f
 Sitemap: https://mohamedsamy2026.github.io/ramadan/sitemap.xml

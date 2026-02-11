@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
@@ -6,4 +7,14 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://mohamedsamy2026.github.io/ramadan/</loc>
+      <lastmod>2026-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+>>>>>>> 86616c864271717317fbc6f947ad6b0bad99036f
 </urlset>
