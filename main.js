@@ -1,4 +1,3 @@
-
 // ده كود بتاع الناف بار
 const navbar = document.querySelector(".navbar");
 const bars = document.querySelector(".fa-bars");
@@ -516,6 +515,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const element = document.querySelector(id);
         if (element) observer.observe(element);
     });
+
 // ده كود بتاع الناف بار
 const navbar = document.querySelector(".navbar");
 const bars = document.querySelector(".fa-bars");
